@@ -3,6 +3,8 @@
 import animais.cachorro;
 import animais.gato;
 import animais.passaro;
+import lojas.petShop;
+import animais.animal;
 import lutadores.Lutador;
 
 import java.util.function.Function;
@@ -12,11 +14,24 @@ public class Main {
 
 
 
-        cachorro cachorro1 = new cachorro("nami", "marrom", 25, 5.5, 5, "nada");
+        animal cachorro1 = new cachorro("nami", "marrom", 25, 5.5, 5, "nada");
 
-        gato gato1 = new gato("luffy", "preto", 5.4);
+        animal gato1 = new gato("luffy", "preto", 5.4);
 
-        passaro passaro1 = new passaro("piupiu", "azul", 0.5);
+        animal passaro1 = new passaro("piupiu", "azul", 0.5);
+
+
+        petShop petshop1 = new petShop();
+
+        petshop1.banho(cachorro1);
+        System.out.println(cachorro1.getEstadoDeEspirito());
+
+        petshop1.banho(gato1);
+        System.out.println(gato1.getEstadoDeEspirito());
+
+        petshop1.deixaNoHotel(passaro1);
+        System.out.println(passaro1.getEstadoDeEspirito());
+
 
 
         cachorro1.soar();
