@@ -1,30 +1,33 @@
 package animais;
-public class cachorro {
+public class cachorro extends animal {
 
     //atributos
 
-   private String nome;
-   private String cor;
-   private int altura;
-   private double peso;
-   private int tamanhoDoRabo;
-   private String estadoDeEspirito;
+    static int numeroDeCachorros;
 
-   //construtores
-    public cachorro(){}
+   private int tamanhoDoRabo;
 
     //construtores adicionados
     public cachorro(String nome, String cor, int altura, double peso, int tamanhoDoRabo, String estadoDeEspirito) {
+        super(nome,cor,peso);
         this.nome = nome;
         this.cor = cor;
         this.altura = altura;
         this.peso = peso;
         this.tamanhoDoRabo = tamanhoDoRabo;
         this.estadoDeEspirito = estadoDeEspirito;
+
+        numeroDeCachorros++;
     }
 
     //metodos
-   public String getNome(){
+
+
+    public static int getNumeroDeCachorros() {
+        return numeroDeCachorros;
+    }
+
+    public String getNome(){
        return this.nome;
    }
    public void setNome(String nome){
@@ -70,11 +73,9 @@ public class cachorro {
         return estadoDeEspirito;
     }
 
-    public void comer(){};
 
-   public void latir(){
-       System.out.println("au au au au");
-   }
+
+
 
    public String pegar(){
        return "bolinha";
@@ -106,5 +107,14 @@ public class cachorro {
          return estadoDeEspirito;
    }
 
-
+    @Override
+    public String toString() {
+        return "cachorro{" +
+                "nome='" + nome + '\'' +
+                '}';
+    }
+    @Override
+    public void soar() {
+        System.out.println("au au au");
+    }
 }
